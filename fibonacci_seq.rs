@@ -7,17 +7,13 @@ fn fib_seq(n: i32) -> i32 {
     let mut snum = 1;
     let mut nth_num = 0;
     while idx <= n { // Iterates from 0 to n (inclusive)
-        // Account for first two numbers.
-        if idx == 0 {
+        if idx == 0 { // Account for first two numbers
             nth_num = 0;
             idx += 1;
-        }
-        else if idx == 1 {
+        } else if idx == 1 {
             nth_num = 1;
             idx += 1;
-        }
-        // Then carry on with the pattern.
-        else {
+        } else { // Then carry on with the pattern
             nth_num = fnum + snum;
             fnum = snum;
             snum = nth_num;
