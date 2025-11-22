@@ -1,5 +1,6 @@
 // Exercise: Write a function to handle the Fibonacci sequence.
 // Have it return the nth number in the sequence starting with [0, 1].
+// Use iteration.
 
 fn fib_seq(n: i32) -> i32 {
     let mut idx = 0;
