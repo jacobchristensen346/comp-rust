@@ -2,6 +2,8 @@
 // This is a modification of the function
 // which could only transpose 3x3 matrices.
 
+// In this case we use const so that they update themselves during compiling.
+// Must compile each time the matrix size changes, though.
 fn transpose<const R: usize, const C: usize>(matrix: [[i32; C]; R]) -> [[i32; C]; R] {
     let mut trans_matrix = matrix; // Initialize to og matrix 
     //for idx in 0..=2 {
