@@ -1,6 +1,9 @@
 // Here is a demonstration of how to tie methods to new type (struct)
 // This is analogous to classes in Python (in some ways)
 
+// Here we have the new type
+// which will be given methods using 'impl'.
+// The fields in this struct become the instance attributes.
 #[derive(Debug)]
 struct CarRace {
     name: String,
@@ -9,8 +12,12 @@ struct CarRace {
 
 impl CarRace {
     // No receiver, a static method.
-    // This is like the class constructor.
+    // This is the constructor.
+    // The constructor is called using 'new' (see main).
     fn new(name: &str, vec: Vec<i32>) -> Self {
+        // The constructor initializes an object
+        // with values in the struct's fields
+        // acting as instance attributes.
         Self { name: String::from(name), laps: vec }
     }
 
