@@ -36,6 +36,10 @@ impl CarRace {
     // But using 'self' alone is probably convention
     // and most convenient, just like in Python.
 
+    // Also note that 'Self' is a type alias for
+    // the struct connected to the impl block.
+    // You can use Self anywhere in the block.
+
     // Exclusive borrowed read-write access to self.
     // This method borrows the instance and can change it.
     fn add_lap(&mut self, lap: i32) {
