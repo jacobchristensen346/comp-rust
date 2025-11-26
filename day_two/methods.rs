@@ -10,6 +10,12 @@ struct CarRace {
     laps: Vec<i32>,
 }
 
+// The methods that will be applied to our new type.
+// Like class methods in Python.
+// You can choose to call individual methods
+// like this... CarRace::add_lap(&mut race, 20)
+// You are explicitely passing the 'receiver' (race),
+// otherwise known as the instance/object.
 impl CarRace {
     // No receiver, a static method.
     // This is the constructor.
@@ -20,6 +26,15 @@ impl CarRace {
         // acting as instance attributes.
         Self { name: String::from(name), laps: vec }
     }
+
+    // Note: 'self' is a keyword or stand-in
+    // for self: Self.
+    // Like in Python where you could call 'self'
+    // anything you want technically
+    // you could do the same here
+    // such as x: Self.
+    // But using 'self' alone is probably convention
+    // and most convenient, just like in Python.
 
     // Exclusive borrowed read-write access to self.
     // This method borrows the instance and can change it.
@@ -47,7 +62,10 @@ impl CarRace {
 }
 
 fn main() {
+    // We create an instance of our new type using 'new'
+    // which calls the constructor.
     let mut race = CarRace::new("Monaco Grand Prix", Vec::new());
+    // Call individual methods with dot notation.
     race.add_lap(70);
     race.add_lap(68);
     race.print_laps();
